@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Muokkaa</title>
+<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}" />
+
+</head>
+<body>
+
+		<div class="outer">
+			<div class="content">
+
+
+				<h2>PELITIETOKANTA</h2>
+<br><br>
+				<form th:object="${peli}" th:action="@{../save}" action="#"
+					method="post">
+					<input type="hidden" th:field="*{id}" class="form-control" /> 
+					<label for="nimi">Nimi</label>
+					<input type="text" id="nimi" th:field="*{nimi}" /> 
+					<label for="alusta">Pelialusta</label>
+					<input type="text" id="alusta" th:field="*{alusta}" />
+					<label for="formaatti">Median tyyppi</label>
+					<input type="text" id="formaatti" th:field="*{formaatti}" />
+					<br>
+					<label for="vuosi">Vuosi</label>
+					<input type="text" id="vuosi" th:field="*{vuosi}" />
+					<label for="info">Lisätietoja</label> 
+					<input type="text" id="info" th:field="*{info}" /> 
+					<br>
+					<br> 
+					<input type="submit" value="Tallenna"></input>
+				</form>
+				<br>
+				<br>
+				<a href="/loginlista">Takaisin</a>
+			</div>
+		</div>
+
+</body>
+</html>
